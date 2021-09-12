@@ -47,7 +47,7 @@ The purpose of this classification model is to predict if the client will subscr
 
 **Cleaning and Explanatory Data Analysis**
 
-> Checked for null values.
+> Checked for null values, no null values
 
 > Checked for duplicate values, Deleted the 8 duplicated rows.
 
@@ -64,7 +64,7 @@ The below table shows that the target variable contains the data with the ratio 
 
 > Performed subsetting of data to extract the data that has the target variable "yes" to conduct EDA.
 
->Performed explanatory data analysis to learn more about the relation between each feature and the target variable.
+> Performed explanatory data analysis to learn more about the relation between each feature and the target variable.
 
 ____________________________________________________
 #### All categorical features versus target variable
@@ -75,6 +75,7 @@ Below are the charts to describe the independent features in reference to the ta
 
 Above charts shows that *married* customer with *university or high school* degree are more likely to agree for long term deposit. Similarly,
 campaigns conducted during *summer* months and *middle of weekdays* are comparatively effective.
+There is an ananomous data element *unknown* in several features.
 
 ________________________________
 #### Age Distribution
@@ -115,23 +116,53 @@ ______________________
 There is no evidence of muticollinearlity of correlation > 0.9, whereas pdays and previous are negatively correlated with -0.73, which can be ignored as 999
 in pdays has no value, which will be fixed.
 
-> 
+> Handled ananomous data element ***unknown***, replaced the uknown to null.
 
+> Dropped variable *default* - being a highly imbalanced feature doesn't provide much value to the model.
 
-
-
-
-
+> Handled missing values generated due to ***unknown***, columns contained null values are 'job', 'marital', 'education', 'housing' and  'loan'. Filled the null 
+> values by taking mode of each column. 
 
 ## Feature Engineering:
 
-Performed one-hot encoding for nominal categorical variable like jobType, major and industry and performed label encoding for degree, used the educational level for labeling eventhough it is not a typical ordinal variable.
+> Performed one-hot encoding for nominal categorical variable like 'marital', 'housing', 'loan', 'contact' and 'poutcome'.
+> performed label encoding for 'month', 'weekday', 'job' and 'education'.
 
-### Checked for correlation:
+## Classification Model
 
-Most of the features are positively correlated with the target variable salary and they is no evidence of muticollinearlity of correlation > 0.9, whereas milesFromMetropolis is negatively correlated with Salary.
+### Model Evaluation Criteria and Metrics:
 
-![image](images/corr.png)
+On any classification problem the main goal is to minimize the false positive(precision) and false negative(recall) rate.
+
+**Model Performance Caveat:**
+
+Classified as the customer will agree for the deposit term and the customer doesn't - Loss of resources - False Positive
+Classified as the customer will not agree for the deposit term and the possibility he/she does - Loss of opportunity - False Negative
+Both the classes are important in this model to minimize the resource spent and maximize the opportunity given in order to maximize the profit.
+
+Metrics to satisfy our needs of measures are - **F beta score** ( where the threshold is set to 1(f1 score) as focusses on both recall and precision) 
+
+__Created a baseline model using logistic regression with imbalanced dataset produced a F1_score of 39%__
+
+**Logistic regression with imbalanced dataset** - Both F1 score and the average precision recall score is very poor -less that 40%. Lets see if the model performance can be improved by handling imbalanced dataset, Technique to use -
+
+1. Undersampling - Deleted the majority cases to match with minority.
+2. Oversampling - Create more data points on top of existing data points in order to attain balanced target data
+3. Oversampling using SMOTE - Create more data points in reference with similar data points using KNN.
+
+Here I used Oversampling with **SMOTETOMEK** technique.
+
+> Generated a balanced dataset from SMOTETOMEK
+  __Below table shows the target variable from original imbalanced dataset to after SMOTE technique__
+  
+  |  | 0 | 1 |
+  | ---- | ----- | ----- |
+  | Original | 21942 | 2764 |
+  | SMOTE | 21785 | 16299 |
+  
+  
+  
+
 
 
 
