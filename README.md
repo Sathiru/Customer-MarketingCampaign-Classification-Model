@@ -66,7 +66,7 @@ Performed subsetting of data to extract the data that has the target variable "y
 
 Performed explanatory data analysis to learn more about the relation between each feature and the target variable,
 Below are the charts to describe the independent features in reference to the target variable "yes" who all accepted the subsription.
-![image](images/feature.png)
+![image](images/features_Vs_target.png)
 
 ## Feature Engineering:
 
