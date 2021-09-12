@@ -130,6 +130,8 @@ in pdays has no value, which will be fixed.
 
 ## Classification Model
 
+> Split the model to train and test data set.
+
 ### Model Evaluation Criteria and Metrics:
 
 On any classification problem the main goal is to minimize the false positive(precision) and false negative(recall) rate.
