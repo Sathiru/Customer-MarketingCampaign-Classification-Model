@@ -68,7 +68,7 @@ Performed explanatory data analysis to learn more about the relation between eac
 Below are the charts to describe the independent features in reference to the target variable "yes" who all accepted the subsription.
 ![image](images/features_Vs_target.png)
 
-Above charts shows that --married-- customer with university or high school degree are more likely to agree for long term deposit. In addition 
+Above charts shows that `married customer with university or high school degree are more likely to agree for long term deposit. In addition 
 
 
 
