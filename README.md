@@ -47,11 +47,11 @@ The purpose of this classification model is to predict if the client will subscr
 
 **Cleaning and Explanatory Data Analysis**
 
-Checked for null values.
+> Checked for null values.
 
-Checked for duplicate values, Deleted the 8 duplicated rows.
+> Checked for duplicate values, Deleted the 8 duplicated rows.
 
-Checked for the distribution of target variable, where the target variable is highly imbalance. 
+> Checked for the distribution of target variable, where the target variable is highly imbalance. 
 
 ![image](/images/Client_subscription_desc.png)  
 
@@ -62,9 +62,9 @@ The below table shows that the target variable contains the data with the ratio 
 | no |	29230 |	0.887317 |
 | yes	| 3712 |	0.112683 |
 
-Performed subsetting of data to extract the data that has the target variable "yes" to conduct EDA.
+> Performed subsetting of data to extract the data that has the target variable "yes" to conduct EDA.
 
-Performed explanatory data analysis to learn more about the relation between each feature and the target variable.
+>Performed explanatory data analysis to learn more about the relation between each feature and the target variable.
 
 ____________________________________________________
 #### All categorical features versus target variable
@@ -105,6 +105,17 @@ Pairplot to describe the relation between the variables
 From pairplot, it shows that the duration and the campaign mostly focused on younger people and skewed down as the age goes up, as per the 
 data description values (pdays=999) means was not contacted before - Ignoring that, whomever was contacted was done with in the last 30 days. 
 In most cases the number of times contacted before a campaign was < 6 times.
+
+_____________________
+#### Correlation 
+______________________
+
+![image](images/corr.png)
+
+There is no evidence of muticollinearlity of correlation > 0.9, whereas pdays and previous are negatively correlated with -0.73, which can be ignored as 999
+in pdays has no value, which will be fixed.
+
+> 
 
 
 
