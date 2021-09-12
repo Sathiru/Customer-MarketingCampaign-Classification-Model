@@ -56,6 +56,7 @@ Checked for the distribution of target variable, where the target variable is hi
 ![image](/images/Client_subscription_desc.png)
 
 |  | Count | 	% |
+| ---- | ----- | ----- |
 | no |	29230 |	0.887317 |
 | yes	| 3712 |	0.112683 |
 
