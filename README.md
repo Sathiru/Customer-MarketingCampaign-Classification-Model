@@ -68,6 +68,12 @@ Performed explanatory data analysis to learn more about the relation between eac
 Below are the charts to describe the independent features in reference to the target variable "yes" who all accepted the subsription.
 ![image](images/features_Vs_target.png)
 
+Above charts shows that --married-- customer with university or high school degree are more likely to agree for long term deposit. In addition 
+
+
+
+
+
 ## Feature Engineering:
 
 Performed one-hot encoding for nominal categorical variable like jobType, major and industry and performed label encoding for degree, used the educational level for labeling eventhough it is not a typical ordinal variable.
