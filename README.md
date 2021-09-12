@@ -134,31 +134,50 @@ in pdays has no value, which will be fixed.
 
 On any classification problem the main goal is to minimize the false positive(precision) and false negative(recall) rate.
 
-**Model Performance Caveat:**
-
-Classified as the customer will agree for the deposit term and the customer doesn't - Loss of resources - False Positive
-Classified as the customer will not agree for the deposit term and the possibility he/she does - Loss of opportunity - False Negative
-Both the classes are important in this model to minimize the resource spent and maximize the opportunity given in order to maximize the profit.
-
 Metrics to satisfy our needs of measures are - **F beta score** ( where the threshold is set to 1(f1 score) as focusses on both recall and precision) 
 
 __Created a baseline model using logistic regression with imbalanced dataset produced a F1_score of 39%__
 
 **Logistic regression with imbalanced dataset** - Both F1 score and the average precision recall score is very poor -less that 40%. Lets see if the model performance can be improved by handling imbalanced dataset, Technique to use -
 
-1. Undersampling - Deleted the majority cases to match with minority.
-2. Oversampling - Create more data points on top of existing data points in order to attain balanced target data
-3. Oversampling using SMOTE - Create more data points in reference with similar data points using KNN.
-
 Here I used Oversampling with **SMOTETOMEK** technique.
 
-> Generated a balanced dataset from SMOTETOMEK
+> Generated a balanced dataset from SMOTETOMEK,
+
   __Below table shows the target variable from original imbalanced dataset to after SMOTE technique__
   
   |  | 0 | 1 |
   | ---- | ----- | ----- |
   | Original | 21942 | 2764 |
   | SMOTE | 21785 | 16299 |
+  
+ > Build different classification model using KFolds and cross_val_score with pipelines,
+ 
+ Algorithm used,
+ 
+  * Logistic Regression
+  * Decision Tree
+  * Random Forest
+  * Gradient boosting
+  * XGBoost
+
+![image](images/Model_comparision.png)
+
+From the above chart, we can say the best two models are RandomForestClassifier and XGBoost.
+
+## Recommendation
+
+* Perform most of the campaign during summer month, when customer is more relaxed and the response rate is higher.
+* Contacting customer through phone and targetting the age group (middle age) makes a comparative difference.
+
+## Feature importance:
+
+Below is the feature importance for feature selection for further tunning the model.
+
+![image](images/feature_importance.png)
+ 
+  
+  
   
   
   
