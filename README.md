@@ -53,48 +53,25 @@ Checked for duplicate values, Deleted the 8 duplicated rows.
 
 Checked for the distribution of target variable, where the target variable is highly imbalance. 
 
-![image](/images/Client_subscription_desc.png)
+![image](/images/Client_subscription_desc.png)  
+
+The below table shows that the target variable contains the data with the ratio of 89% "NO" to 11% "Yes", which is highly imbalanced dataset. 
 
 |  | Count | 	% |
 | ---- | ----- | ----- |
 | no |	29230 |	0.887317 |
 | yes	| 3712 |	0.112683 |
 
+Performed subsetting of data to extract the data that has the target variable "yes" to conduct EDA.
 
 Performed explanatory data analysis to learn more about the relation between each feature and the target variable,
+Below are the charts to describe the independent features in reference to the target variable "yes" who all accepted the subsription.
 
-______________________
-#### Salary versus jobType
-____________________
+![image](images/feature.png)
 
-![image](images/salary_vs_jobType.png)
 
-The c-type job like CEO, CTO, CFO have higher average salary and the order goes down.
 
-_________________
-#### Salary versus degree
-_________________________
 
-![image](images/salary_vs_degree.png)
-
-The higher the degree level the higher the salary is, eg Doctoral have higher salary though it all depends on field, industry and jobType, the visualization just implies how 
-educational level infuence the salary.
-
-__________________
-#### Salary versus major
-_______________________
-
-![image](images/salary_vs_major.png)
-
-Technical major have higher average salary
-
-__________________________________
-#### Salary versus industry
-______________________
-
-![image](images/salary_vs_industry.png)
-
-Oil, web and finance industry seems to have higher salary
 
 ## Feature Engineering:
 
